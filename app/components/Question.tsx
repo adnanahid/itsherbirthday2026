@@ -26,10 +26,6 @@ export default function Question({
 
   return (
     <div className="text-center">
-      <p className="text-[11px] sm:text-sm uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#6462AC] mb-3 sm:mb-4">
-        Question
-      </p>
-
       <h2 className="text-2xl sm:text-4xl font-semibold leading-tight mb-6 sm:mb-8 px-2">
         {question}
       </h2>

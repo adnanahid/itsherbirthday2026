@@ -96,11 +96,6 @@ export default function Interrogation({
           )}
         </div>
 
-        {/* Question Counter */}
-        <p className="text-xs sm:text-sm text-zinc-400 mb-5 sm:mb-6">
-          Question {currentQuestion + 1} of {questions.length}
-        </p>
-
         {/* Question */}
         <Question
           question={questions[currentQuestion].question}

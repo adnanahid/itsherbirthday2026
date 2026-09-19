@@ -5,11 +5,15 @@ import { useState } from "react";
 type QuestionProps = {
   question: string;
   onNext: (answer: string) => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
 };
 
 export default function Question({
   question,
   onNext,
+  onFocus,
+  onBlur,
 }: QuestionProps) {
   const [answer, setAnswer] = useState("");
 
@@ -35,15 +39,15 @@ export default function Question({
           type="text"
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
+          onFocus={onFocus}
+          onBlur={onBlur}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               handleNext();
             }
           }}
           placeholder="Type your answer..."
-          autoComplete="off"
-          enterKeyHint="done"
-          className="w-full border border-[#6462AC] rounded-xl px-5 py-2 text-base sm:text-lg outline-none focus:border-[#55539A] focus:ring-1 focus:ring-[#d6b477]/30 transition-all mb-4 sm:mb-6"
+          className="w-full max-w-lg border rounded-xl px-5 py-2 text-lg outline-none focus:border-[#6462AC] focus:ring-2 focus:ring-[#6462AC]/30 mb-6"
         />
 
         <button

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import InspectorCat from "./InspectorCat";
 import Question from "./Question";
 
@@ -12,6 +13,10 @@ const questions = [
   {
     question: "What are you doing here?",
     answer: "tate tomar ki...",
+  },
+  {
+    question: "Why should I let you go?",
+    answer: "karon ami tomar bou",
   },
   {
     question: "Why should I let you go?",
@@ -29,6 +34,7 @@ export default function Interrogation({
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isWrong, setIsWrong] = useState(false);
   const [showWrongText, setShowWrongText] = useState(false);
+  const [inputFocused, setInputFocused] = useState(false);
 
   const checkAnswer = (answer: string) => {
     const correctAnswer = questions[currentQuestion].answer;
@@ -55,15 +61,19 @@ export default function Interrogation({
 
       setTimeout(() => {
         setShowWrongText(false);
-
         setIsWrong(false);
       }, 3000);
     }, 300);
   };
 
   return (
-    <main className="min-h-svh flex items-center justify-center px-5 py-8 sm:px-6">
-      <div className="w-full max-w-2xl text-center">
+    <main className="min-h-svh bg-white text-zinc-900 flex items-center justify-center px-5 py-8 sm:px-6">
+
+      <div
+        className={`w-full max-w-2xl text-center transition-transform duration-300 ease-out ${
+          inputFocused ? "-translate-y-36 sm:translate-y-0" : "translate-y-0"
+        }`}
+      >
 
         <div className="relative flex justify-center mb-5 sm:mb-8">
           <div
@@ -77,9 +87,9 @@ export default function Interrogation({
           {/* Wrong Answer Text */}
           {showWrongText && (
             <div className="absolute -top-10 inset-0 pointer-events-none">
-              <div className=" px-6 py-3 rounded-2xl animate-wrong-text">
+              <div className="px-6 py-3 rounded-2xl animate-wrong-text">
                 <p className="text-2xl sm:text-3xl font-bold tracking-wide">
-                  nope! 
+                  nope!
                 </p>
               </div>
             </div>
@@ -95,6 +105,8 @@ export default function Interrogation({
         <Question
           question={questions[currentQuestion].question}
           onNext={checkAnswer}
+          onFocus={() => setInputFocused(true)}
+          onBlur={() => setInputFocused(false)}
         />
 
       </div>

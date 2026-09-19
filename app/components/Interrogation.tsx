@@ -71,7 +71,7 @@ export default function Interrogation({
 
       <div
         className={`w-full max-w-2xl text-center transition-transform duration-300 ease-out ${
-          inputFocused ? "-translate-y-36 sm:translate-y-0" : "translate-y-0"
+          inputFocused ? "-translate-y-24 sm:translate-y-0" : "translate-y-0"
         }`}
       >
 
@@ -84,7 +84,6 @@ export default function Interrogation({
             <InspectorCat videoSrc="/animations/inspector-hola.mp4" />
           </div>
 
-          {/* Wrong Answer Text */}
           {showWrongText && (
             <div className="absolute -top-10 inset-0 pointer-events-none">
               <div className="px-6 py-3 rounded-2xl animate-wrong-text">
@@ -96,7 +95,6 @@ export default function Interrogation({
           )}
         </div>
 
-        {/* Question */}
         <Question
           question={questions[currentQuestion].question}
           onNext={checkAnswer}

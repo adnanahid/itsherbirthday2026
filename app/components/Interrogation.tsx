@@ -71,7 +71,7 @@ export default function Interrogation({
 
       <div
         className={`w-full max-w-2xl text-center transition-transform duration-300 ease-out ${
-          inputFocused ? "-translate-y-32 sm:translate-y-0" : "translate-y-0"
+          inputFocused ? "-translate-y-26 sm:translate-y-0" : "translate-y-0"
         }`}
       >
 

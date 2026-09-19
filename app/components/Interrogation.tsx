@@ -11,11 +11,11 @@ const questions = [
   },
   {
     question: "What are you doing here?",
-    answer: "meow meow meow",
+    answer: "tate tomar ki...",
   },
   {
     question: "Why should I let you go?",
-    answer: "meow meow",
+    answer: "karon ami tomar bou",
   },
 ];
 
@@ -34,7 +34,6 @@ export default function Interrogation({
     const correctAnswer = questions[currentQuestion].answer;
     const userAnswer = answer.trim().toLowerCase();
 
-    // Correct answer
     if (userAnswer === correctAnswer.toLowerCase()) {
       if (currentQuestion === questions.length - 1) {
         onComplete();
@@ -45,32 +44,27 @@ export default function Interrogation({
       return;
     }
 
-    // -------------------------
-    // WRONG ANSWER
-    // -------------------------
+    if ("vibrate" in navigator) {
+      navigator.vibrate([100, 50, 100]);
+    }
 
-    // Cat starts coming closer
     setIsWrong(true);
 
-    // Wait for the 300ms zoom animation
     setTimeout(() => {
       setShowWrongText(true);
 
-      // Keep WRONG ANSWER visible for 3 seconds
       setTimeout(() => {
         setShowWrongText(false);
 
-        // Cat returns to original size
         setIsWrong(false);
       }, 3000);
     }, 300);
   };
 
   return (
-    <main className="min-h-screen min-h-[100svh] bg-white text-zinc-900 flex items-center justify-center px-5 py-8 sm:px-6">
+    <main className="min-h-svh flex items-center justify-center px-5 py-8 sm:px-6">
       <div className="w-full max-w-2xl text-center">
 
-        {/* Inspector Cat */}
         <div className="relative flex justify-center mb-5 sm:mb-8">
           <div
             className={`transition-transform duration-300 ease-out ${
@@ -102,6 +96,7 @@ export default function Interrogation({
           question={questions[currentQuestion].question}
           onNext={checkAnswer}
         />
+
       </div>
     </main>
   );

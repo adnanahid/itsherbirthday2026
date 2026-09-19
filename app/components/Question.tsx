@@ -43,13 +43,13 @@ export default function Question({
           placeholder="Type your answer..."
           autoComplete="off"
           enterKeyHint="done"
-          className="w-full border border-[#6462AC] rounded-xl px-5 py-4 text-base sm:text-lg outline-none focus:border-[#55539A] focus:ring-2 focus:ring-[#d6b477]/30 transition-all mb-4 sm:mb-6"
+          className="w-full border border-[#6462AC] rounded-xl px-5 py-2 text-base sm:text-lg outline-none focus:border-[#55539A] focus:ring-1 focus:ring-[#d6b477]/30 transition-all mb-4 sm:mb-6"
         />
 
         <button
           onClick={handleNext}
           disabled={!answer.trim()}
-          className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#6462AC] text-white font-medium active:scale-[0.98] hover:bg-[#55539A] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100"
+          className="w-full sm:w-auto px-8 py-2 rounded-2xl bg-[#6462AC] text-white font-medium active:scale-[0.98] hover:bg-[#55539A] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100"
         >
           Continue
         </button>

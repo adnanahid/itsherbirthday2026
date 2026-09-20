@@ -14,7 +14,7 @@ export default function TimeCount({
         muted
         playsInline
         preload="auto"
-        className="w-[90vw] h-[90vw] max-w-[700px] max-h-[700px] object-contain"
+        className="w-[90vw] h-[90vw] max-w-175 max-h-175 object-contain"
         />
     </div>
   );

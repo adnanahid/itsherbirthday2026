@@ -12,16 +12,12 @@ const questions = [
   },
   {
     question: "What are you doing here?",
-    answer: "tate tomar ki...",
+    answer: "meow meow meow",
   },
   {
     question: "Why should I let you go?",
-    answer: "karon ami tomar bou",
-  },
-  {
-    question: "Why should I let you go?",
-    answer: "karon ami tomar bou",
-  },
+    answer: "meow meow",
+  }
 ];
 
 type InterrogationProps = {
